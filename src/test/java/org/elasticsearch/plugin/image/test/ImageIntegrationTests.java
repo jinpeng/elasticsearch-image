@@ -39,7 +39,7 @@ public class ImageIntegrationTests extends ElasticsearchIntegrationTest {
     @Before
     public void createEmptyIndex() throws Exception {
         logger.info("creating index [{}]", INDEX_NAME);
-        wipeIndices(INDEX_NAME);
+        cluster().wipeIndices(INDEX_NAME);
         createIndex(INDEX_NAME);
         ensureGreen();
     }
